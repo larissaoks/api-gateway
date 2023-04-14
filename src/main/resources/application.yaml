@@ -1,0 +1,46 @@
+spring:
+  cloud:
+    discovery:
+      locator:
+        enabled: true
+    gateway:
+      routes:
+        - id: usuario-service
+          uri: lb://usuario-service
+          predicates:
+            - Path=/usuario/**
+
+        - id: usuario-service-auth
+          uri: lb://usuario-service
+          predicates:
+            - Path=/autenticacao/**
+
+        - id: agendamento-service
+          uri: lb://agendamento-service
+          predicates:
+            - Path=/agenda/**
+
+        - id: servico-service
+          uri: lb://agendamento-service
+          predicates:
+            - Path=/servico/**
+
+
+  application:
+    name: api-gateway
+server:
+  port: 9091
+
+eureka:
+  instance:
+    client:
+      fetch-registry: false
+      register-with-eureka: true
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
