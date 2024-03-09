@@ -20,6 +20,22 @@ spring:
           predicates:
             - Path=/viagem/**
 
+        - id: roteiro-conectado
+          uri: lb://roteiro-conectado
+          predicates:
+            - Path=/hospedagem/**
+
+        - id: roteiro-conectado
+          uri: lb://roteiro-conectado
+          predicates:
+            - Path=/passagem/**
+
+        - id: roteiro-conectado
+          uri: lb://roteiro-conectado
+          predicates:
+            - Path=/roteiro/**
+
+
 
   application:
     name: api-gateway
