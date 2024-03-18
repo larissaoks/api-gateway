@@ -10,8 +10,8 @@
 
 	</parent>
 	<groupId>br.com.infnet</groupId>
-	<artifactId>api-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>api-gateway-conectado</artifactId>
+	<version>1.0</version>
 	<name>api-gateway</name>
 	<description>api-gateway</description>
 	<properties>
